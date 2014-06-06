@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>aceeditor</artifactId>
-	<packaging>jar</packaging>
+	<packaging>bundle</packaging>
 	<name>AceEditor</name>
 	<parent>
 		<groupId>org.vaadin.addons</groupId>
@@ -95,6 +95,18 @@
 					<descriptors>
 						<descriptor>assembly.xml</descriptor>
 					</descriptors>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<_exportcontents>org.vaadin.aceeditor.*, name.fraser.neil.plaintext.*</_exportcontents>
+						<Import-Package>com.google.gwt.*; resolution:=optional, com.vaadin.client.*; resolution:=optional, *</Import-Package> <!-- We don't need client side java code on server as it's compiled to widgetset already -->
+					</instructions>
 				</configuration>
 			</plugin>
 		</plugins>

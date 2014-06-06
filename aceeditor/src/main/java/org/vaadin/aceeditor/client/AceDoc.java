@@ -1,15 +1,21 @@
 package org.vaadin.aceeditor.client;
 
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
 import org.vaadin.aceeditor.client.AceAnnotation.MarkerAnnotation;
 import org.vaadin.aceeditor.client.AceAnnotation.RowAnnotation;
 import org.vaadin.aceeditor.client.TransportDoc.TransportMarker;
 import org.vaadin.aceeditor.client.TransportDoc.TransportMarkerAnnotation;
 import org.vaadin.aceeditor.client.TransportDoc.TransportRowAnnotation;
 
-import java.util.*;
-import java.util.Map.Entry;
-
-public class AceDoc {
+public class AceDoc implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	private final String text;
 	

@@ -1,5 +1,6 @@
 package org.vaadin.aceeditor;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -24,7 +25,8 @@ import org.vaadin.aceeditor.client.TransportDoc.TransportRowAnnotation;
 
 
 
-public class ServerSideDocDiff {
+public class ServerSideDocDiff implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	// We could use ThreadLocal but that causes a (valid) complaint
 	// of memory leak by Tomcat. Creating a new diff_match_patch every
@@ -37,7 +39,8 @@ public class ServerSideDocDiff {
 	         }
 	     };
 	*/
-	
+
+
 	private static diff_match_patch getDmp() {
 		return new diff_match_patch();
 	}

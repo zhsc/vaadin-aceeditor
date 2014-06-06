@@ -4,7 +4,8 @@ import org.vaadin.aceeditor.client.AceRange;
 import org.vaadin.aceeditor.client.Util;
 
 public class TextRange extends AceRange {
-
+	private static final long serialVersionUID = 1L;
+	
 	private final String text;
 	int start = -1;
 	int end = -1;
